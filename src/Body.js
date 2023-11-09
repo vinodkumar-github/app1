@@ -1,4 +1,5 @@
 import DynamicName from "./Body/DynamicName";
+import Cart from "./Body/Cart"
 import { useState } from "react";
 const BodyStyle =  {
 
@@ -41,6 +42,12 @@ function Body() {
         <input placeholder="1"  type="number"  min= '1' onChange={takeinput}></input>
         <button onClick = {()=>setCount(Number(c))}>Submit</button>
        
+       <br /><br /><br />
+       <hr></hr>
+       <br /><br />
+       <Cart/>
+      <br /><br />
+      <hr />
       </div>
     );
   }
