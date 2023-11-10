@@ -1,29 +1,6 @@
 import React, { useState } from 'react';
-
-// CSS styles
-const cartStyle = {
-  maxWidth: '80%',
-  margin: '0 auto',
-};
-
-const listItemStyle = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  marginBottom: '12px',
-};
-
-const checkboxStyle = {
-  transform: 'scale(2)', 
-};
-
-const deleteButtonStyle = {
-  padding: '8px 12px',
-  background: 'red',
-  color: 'white',
-  border: 'none',
-  cursor: 'pointer',
-};
+import './Cart.css';
+import AddItem from './AddItem';
 
 function Cart() {
   const [goods, setGoods] = useState([
@@ -54,29 +31,36 @@ function Cart() {
     const upGoods = goods.filter((item) =>
       good.id !== item.id
     );
-    setGoods(upGoods);
+    return setGoods(upGoods);
   }
 
   function handleCart(good) {
     return (
-      <li key={good.id} style={listItemStyle}>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <input
-            type="checkbox"
-            checked={good.added}
-            onChange={() => handleCheck(good)}
-            style={checkboxStyle}
-          />
-          <span style={{ marginLeft: '40px' }}>{good.name}</span>
+      <React.Fragment key={good.id}>
+        <li className="list-item">
+          <div className="checkbox-container">
+            <input
+              type="checkbox"
+              checked={good.added}
+              onChange={() => handleCheck(good)}
+              className="checkbox"
+            />
+            <label className="span-name" htmlFor='checkbox' onDoubleClick={() => handleCheck(good)}>
+              {good.name}
+            </label>
           </div>
-        <button style={deleteButtonStyle} onClick={()=> handleDelete(good)}>Delete</button>
-        
-      </li>
+          <button className="delete-button" onClick={() => handleDelete(good)}>
+            Delete
+          </button>
+        </li>
+      </React.Fragment>
     );
   }
+  
 
   return (
-    <div style={cartStyle}>
+    <div id="cart">
+       <AddItem goods ={goods} setGoods = {setGoods} />
       <ul>{goods.map((good) => handleCart(good))}</ul>
     </div>
   );

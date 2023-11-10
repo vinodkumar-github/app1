@@ -1,0 +1,36 @@
+/* styles.css */
+
+#cart {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  .list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .checkbox {
+    transform: scale(2);
+  }
+  
+  .delete-button {
+    padding: 8px 12px;
+    background: royalblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+    .delete-button:hover {
+        padding: 8px 12px;
+        background: red;
+        color: white;
+        border: none;
+        cursor: pointer;
+  }
+    .span-name {
+     margin: 0px 40px 0px 40px 
+}  
