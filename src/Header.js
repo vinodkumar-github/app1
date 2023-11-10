@@ -15,7 +15,7 @@ const h1Style =  {
 function Header() {
     return (
       <div className="Header" style={HeaderStyle}>
-        <h1 style={h1Style}>Applying React</h1>
+        <h1 style={h1Style}>Applying  React</h1>
       </div>
     );
   }
