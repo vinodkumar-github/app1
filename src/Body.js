@@ -1,4 +1,5 @@
 import DynamicName from "./Body/DynamicName";
+import DynamicColour from "./Body/DynamicColour";
 import Cart from "./Body/Cart";
 import { useState } from "react";
 
@@ -54,6 +55,7 @@ function Body() {
       <p>`Button was clicked {count} times` </p>
       <div style={inputContainerStyle}>
         <input
+         
           placeholder="1"
           type="number"
           min="1"
@@ -78,6 +80,7 @@ function Body() {
       <br />
       <br />
       <hr />
+      <DynamicColour/>
     </div>
   );
 }
